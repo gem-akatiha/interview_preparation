@@ -10,9 +10,11 @@ if n==0:
     print('0 is neither prime nor composite')
 elif n==2:
     print('2 is the only even prime number')
+elif n%2==0:
+    print(f'{n} is not a prime number')
 else:
     # finding square root of any number to check whether it is prime or not is good practice because
-    # if we prime factorise and number in form a*b, then we will find that if a increases, then b decrease
+    # if we prime factorise any number in form a*b, then we will find that if a increases, then b decrease
     # so at any given point of time, a and b can attain the max value only if a and b are equal
 
     # a**b is always float and range doesn't work on floats, so we have to convert that value in int
