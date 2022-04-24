@@ -1,0 +1,32 @@
+*Mutable vs Immutable objects*
+
+By definition, immutable objects are those whose values can't be changed. For Ex: tuple
+>>> a = 1,2,3
+>>> a[0] = 2
+will get TypeError
+
+Also,
+>>> b = 1,2,3
+>>> c = 1,2,3,4
+>>> a==b==c
+True
+
+Now, if we want to prove our statement that tuple are immutable, then any change in a will not be favoured.
+Let's see another example.
+>>> a = [1,2,3],4,5
+>>> b = [1,2,3],4,5
+>>> a is b
+False
+>>> a == b
+True
+
+It is clear that a or b will not allow any change if they are immutable i.e. a==b will always return True. Let's experiment.
+>>> a[0].append('new_value')
+>>> a
+([1,2,3,'new_value'],4,5)
+>>> a == b
+False
+
+Whaaaat? if a was immutable, it would not have allowed any internal change.
+To understand what happened above, keep this in mind variable aren't boxes, they are labels
+More about the above discussion can be found at http://radar.oreilly.com/2014/10/python-tuples-immutable-but-potentially-changing.html
